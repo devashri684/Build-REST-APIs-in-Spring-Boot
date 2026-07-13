@@ -1,5 +1,6 @@
 package Build.REST.APIs.com.example.Build.REST.APIs.demo.service.impl;
 
+import Build.REST.APIs.com.example.Build.REST.APIs.demo.dto.AddStudentRequestDto;
 import Build.REST.APIs.com.example.Build.REST.APIs.demo.dto.StudentDto;
 import Build.REST.APIs.com.example.Build.REST.APIs.demo.entity.Student;
 import Build.REST.APIs.com.example.Build.REST.APIs.demo.repository.StudentRepository;
@@ -41,6 +42,13 @@ public class StudentServiceImpl implements StudentService {
 //        StudentDto studentDto = modelMapper.map(student,StudentDto.class);
 //        return studentDto;                      //second way to convert studeo into studnetDTO by modelmapper dependency
         return modelMapper.map(student,StudentDto.class);
+    }
+
+    @Override
+    public StudentDto createNewStudent(AddStudentRequestDto addStudentRequestDto) {
+        Student newStudent =modelMapper.map(addStudentRequestDto,Student.class);
+        Student student= studentRepository.save(newStudent);
+        return modelMapper.map(student, StudentDto.class);
     }
 
 }
