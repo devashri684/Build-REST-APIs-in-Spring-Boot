@@ -1,17 +1,21 @@
-package Build.REST.APIs.com.example.Build.REST.APIs.demo.dto;
+
 //“DTO is a class used to transfer only required data between client and server
 // without exposing the full entity.”
+package Build.REST.APIs.com.example.Build.REST.APIs.demo.dto;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class StudentDto {
-    private long id;
+
+    private Long id;
     private String name;
     private String email;
-
+}
     //No need to make gettes setters and construotor justtt use @Data annotaion
 
 //    public StudentDto(String name, String email,long id) {
@@ -43,4 +47,3 @@ public class StudentDto {
 //    public void setEmail(String email) {
 //        this.email = email;
 //    }
-}

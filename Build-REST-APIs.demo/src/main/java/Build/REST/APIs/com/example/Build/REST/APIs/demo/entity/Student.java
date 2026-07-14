@@ -6,11 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.*;
 
 //@Entity comes from Spring data jpa dependency
 @Entity // it Createe table in mysqldatabase with the name Student
 @Getter    //getter and setter so that name and email can update
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
